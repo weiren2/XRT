@@ -91,6 +91,9 @@ xclmgmt-y := \
 
 xclmgmt-y += $(libfdt-y)
 
+# Disable UBSAN messages (e.g., flexible array of `struct axlf_section_header` in `struct axlf`)
+UBSAN_SANITIZE := n
+
 CONFIG_MODULE_SIG=n
 KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build
 
